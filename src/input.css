@@ -3,6 +3,7 @@
 @theme {
     --color-background: black;
     --color-accent: #F5F1E4;
+    --color-hover: #D4A83F;
 
 
     --font-display-default: 'poppins';

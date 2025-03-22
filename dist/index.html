@@ -7,82 +7,66 @@
     <title>The hungry Llama</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/Skilaverkefni1.1568f793.css">
+    <link rel="stylesheet" href="/NTV_Onn2_Skilaverkefni1_llama.1568f793.css">
 
     <!-- Google fonts -->
+    <!-- Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-
+    <!-- Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script>// Visability for dropdown menu on small screen
+function toggleMenu() {
+    const menu = document.getElementById('dropdownMenu'); //grabs an HTML element with the ID dropdownMenu and assigns it to the constant variable menu
+    menu.classList.toggle('hidden'); //If the menu element already has the hidden class, it will remove it, otherwise add it
+}
+
+</script>
+
 </head>
 
-<body>
+<body class="h-full">
+
     <header>
-        <div class="relative h-20 bg-linear-to-t from-gray-800 to-black">
-            <!-- Logo -->
+        <div class="relative h-20 bg-gradient-to-t from-gray-800 to-black">
+            <!-- Rounded logo -->
             <img src="/hungry%20llama.2f522ef5.png" alt="Logo" class="h-30 rounded-full absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 z-10">
 
-            <!-- Burger Menu -->
-            <div class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20">
-                <button class="text-white">
-                    <!-- Burger icon  -->
+            <!-- Burger Menu for small screens, dropdown menu is hidden. When clicked the toggleMenu() is called -->
+            <div class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 sm:hidden">
+                <button class="text-accent" onclick="toggleMenu()">
+                    <!-- Drawing burger icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
+
+            <!-- Links for large screens, hidden for everythig smaller than sm breakpoint -->
+            <div class="hidden sm:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-20 space-x-6">
+                <a href="/menu.html" class="text-accent hover:text-violet-600 transition duration-300">Menu</a>
+                <a href="/about.html" class="text-accent hover:text-violet-600 transition duration-300">About Us</a>
+                <a href="/contact.html" class="text-accent hover:text-violet-600 transition duration-300">Contact</a>
+            </div>
         </div>
     </header>
 
+    <!-- Dropdown menu, hidden for everything bigger than the sm breakpoint -->
+    <div id="dropdownMenu" class="absolute top-16 right-4 bg-gradient-to-t from-gray-800 to-black text-accent rounded-lg shadow-lg flex flex-col items-center space-y-2 py-4 px-6 sm:hidden z-30">
+        <a href="/menu.html" class="text-lg hover:text-violet-600 transition duration-300">Menu</a>
+        <a href="/about.html" class="text-lg hover:text-violet-600 transition duration-300">About Us</a>
+        <a href="/contact.html" class="text-lg hover:text-violet-600 transition duration-300">Contact</a>
+    </div>
 
-    <!-- <header class="bg-background text-white flex py-2 px-6 font-display-default">
-        <div class="grid-template-columns: repeat(3, 1fr);">
-            <div class="w-33">
-                col1
-            </div>
-            <div class="w-16">
-                col2
-            </div>
-            <div class="w-32">
-                col3
-            </div>
-        </div> -->
-    <!-- <img src="/myndir/hungry llama.png" class="col-start-2"> -->
-    <!-- <div class="nav_text">
-            <div class="flex align-middle">
-                <nav class="space-x-2 hidden sm:block">
-                    <a href="#" class="text-white hover:text-violet-600 transition duration-500">
-                        Home</a>
-                    <a href="#"> About</a>
-                    <a href="#"> Contact</a>
-                </nav>
 
-                <input type="checkbox" class="peer hidden" id="burger" />
-                <label for="burger" class="flex flex-col sm:hidden justify-center">
-                    <div class="w-6 h-0.5 bg-black"></div>
-                    <div class="w-6 h-0.5 mt-1 bg-black"></div>
-                    <div class="w-6 h-0.5 mt-1 bg-black"></div>
-                </label>
-                 Mobile navigation
-        <nav
-            class="absolute w-full px-5 py-6 hidden sm:hidden flex-col peer-checked:flex top-10 left-0 text-red-500 bg-teal-800 space-y-2">
-            <a href="#" class="text-center border-b-2 border-amber-50"> Home</a>
-            <a href="#" class="text-center border-b-2 border-amber-50">
-                About</a>
-            <a href="#" class="text-center border-b-2 border-amber-50">
-                Contact</a>
-        </nav>
-
-        </div>
-        </div> 
-    </header>-->
-
-    <main>
+    <!-- main content, should at least fill the vertical space available -->
+    <main class="flex flex-col min-h-screen">
         <!-- Front page image and slogan -->
-        <div class="relative group bg-[url('/myndir/interior.jpg')] bg-center bg-[length:150%] bg-blend-overlay h-90 py-32 transform transition-transform duration-300 group-hover:scale-105">
+        <div class="relative group bg-[url('/myndir/interior.jpg')] bg-center bg-cover bg-no-repeat flex-1 py-32 transform transition-transform duration-300 group-hover:scale-105">
             <!-- Black overlay -->
             <div class="absolute inset-0 bg-black opacity-20"></div>
             <p class="font-display-accent text-accent text-4xl text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -95,20 +79,19 @@
 
         <!-- Our dishes -->
         <div class="relative w-full">
-
-            <!-- mini menu -->
+            <!-- mini menu, shows a selection on the menu, scrollable -->
             <div class="bg-black">
-                <p class="bg-gradient-to-t from-gray-800 to-black text-white p-4">Our dishes</p>
+                <p class="bg-gradient-to-t from-gray-800 to-black text-accent p-4">Our dishes</p>
                 <div class="relative py-15">
                     <!-- Background and Black Overlay -->
-                    <div class="absolute inset-0 bg-[url('/myndir/pastuso.jpg')] bg-[length:150%] blur-2xs bg-center bg-black opacity-50 z-0">
+                    <div class="absolute inset-0 bg-[url('/myndir/pastuso.jpg')] bg-[length:150%] blur-2xs bg-center bg-black opacity-20 z-0">
                     </div>
 
                     <!-- Menu Items (in front of the background) -->
                     <div class="bg-black flex relative z-10 overflow-x-auto px-4 py-4 space-x-4">
 
                         <div class="flex">
-                            <!-- First image with overlay -->
+                            <!-- Image with overlay -->
                             <div class="relative group flex-shrink-0">
                                 <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
                                 <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
@@ -120,19 +103,7 @@
                                 <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
                                 </div>
                             </div>
-                            <!-- Third image with overlay -->
-                            <div class="relative group flex-shrink-0">
-                                <img src="/melts.d9f655aa.png" alt="sandwiches" class="h-35 w-auto rounded-full px-3">
-                                <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
-                                </div>
-                            </div>
-                            <!-- Fourth image with overlay -->
-                            <div class="relative group flex-shrink-0">
-                                <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3">
-                                <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
-                                </div>
-                            </div>
-                            <!-- First image with overlay -->
+                            <!-- Image with overlay -->
                             <div class="relative group flex-shrink-0">
                                 <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
                                 <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
@@ -144,18 +115,43 @@
                                 <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
                                 </div>
                             </div>
-                            <!-- Third image with overlay -->
+                            <!-- Image with overlay -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/melts.d9f655aa.png" alt="sandwiches" class="h-35 w-auto rounded-full px-3">
+                                <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                </div>
+                            </div>
+                            <!-- Second image with overlay -->
+                            <div class="relative group flex-shrink-0">
+                                <img src="/grilled_sandwich.253ff7b6.png" alt="wraps" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
                                 <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
                                 </div>
                             </div>
-                            <!-- Fourth image with overlay -->
+                            <!-- Image with overlay -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3">
+                                <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                </div>
+                            </div>
+                            <!-- Second image with overlay -->
+                            <div class="relative group flex-shrink-0">
+                                <img src="/grilled_sandwich.253ff7b6.png" alt="wraps" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
                                 <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
                                 </div>
                             </div>
+                            <!-- Image with overlay -->
+                            <div class="relative group flex-shrink-0">
+                                <img src="/chicken_salad.718bc038.png" alt="melts" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                </div>
+                            </div>
+                            <!-- Second image with overlay -->
+                            <div class="relative group flex-shrink-0">
+                                <img src="/grilled_sandwich.253ff7b6.png" alt="wraps" class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -167,82 +163,13 @@
     </main>
     <footer>
         <div class="bg-gradient-to-t from-black to-gray-800">
-            <p class=" text-white p-4">Contact</p>
-            <p class="text-white p-4 text-xs ">The hungry Llama - 1404 Food road - 555-3212 -frontdesk@hungryllama.com
+            <p class=" text-white px-4 py-2"></p>
+            <p class="text-white px-4 py-2 text-xs text-center ">The hungry Llama - 1404 Food road - 555-3212
+                -frontdesk@hungryllama.com
             </p>
         </div>
     </footer>
 
-    <script></script>
+<script src="/NTV_Onn2_Skilaverkefni1_llama.59712999.js"></script></body>
 
-    
-
-</body>
-
-
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Increment/Decrement</title>
-    <style>#message {
-  color: red;
-  font-weight: bold;
-}
-</style>
-</head>
-<body>
-    <h1>Increment/Decrement with Custom Values</h1>
-    
-    <label for="increment-value">Increment/Decrement By: </label>
-    <input type="number" id="increment-value" value="5">
-    
-    <label for="limit">Limit Range (from -<span id="limit-range">35</span> to <span id="limit-range">35</span>): </label>
-    <input type="number" id="limit" value="35">
-    
-    <button id="increment">Increment</button>
-    <button id="decrement">Decrement</button>
-    
-    <div>
-        <p>Current Value: <span id="value">0</span></p>
-        <p id="message"></p>
-    </div>
-
-    <script>let value = 0;
-let incrementValue = parseInt(localStorage.getItem('incrementValue')) || 5;
-let limit = parseInt(localStorage.getItem('limit')) || 35;
-// Update the display function
-function updateDisplay() {
-    document.getElementById('value').textContent = value;
-    document.getElementById('limit-range').textContent = limit;
-    if (value > limit || value < -limit) document.getElementById('message').textContent = 'BOOM';
-    else document.getElementById('message').textContent = '';
-}
-// Event listeners for increment and decrement buttons
-document.getElementById('increment').addEventListener('click', ()=>{
-    value += incrementValue;
-    updateDisplay();
-});
-document.getElementById('decrement').addEventListener('click', ()=>{
-    value -= incrementValue;
-    updateDisplay();
-});
-// Update increment value and limit from input fields
-document.getElementById('increment-value').addEventListener('input', (event)=>{
-    incrementValue = parseInt(event.target.value);
-    localStorage.setItem('incrementValue', incrementValue);
-});
-document.getElementById('limit').addEventListener('input', (event)=>{
-    limit = parseInt(event.target.value);
-    localStorage.setItem('limit', limit);
-    updateDisplay();
-});
-// Initial display update
-updateDisplay();
-
-</script>
-<script src="/Skilaverkefni1.59712999.js"></script></body>
 </html>
