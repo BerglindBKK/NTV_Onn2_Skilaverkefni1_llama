@@ -25,6 +25,39 @@
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
 }
 
-/* .nav_text {
-    font-size: 48px;
-} */
+p {
+    font-family: var(--font-display-default);
+    line-height: 2;
+}
+
+label {
+    font-family: var(--font-display-default);
+}
+
+button {
+    font-family: var(--font-display-default);
+}
+
+.accent {
+    font-family: var(--font-display-accent);
+}
+
+.menuhead {
+    font-family: var(--font-display-accent);
+}
+
+.menutitle {
+    font-family: var(--font-display-default);
+    font-style: bold;
+    font-size: x-large;
+}
+
+.boldmenutext {
+    font-family: var(--font-display-default);
+    font-style: bold;
+}
+
+.menutext {
+    font-family: var(--font-display-default);
+    line-height: 1.5;
+}

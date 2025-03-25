@@ -36,11 +36,23 @@
 <body class="h-full">
 
     <header>
-        <div class="relative h-20 bg-gradient-to-t from-gray-800 to-black">
-            <!-- Rounded logo -->
-            <img src="/myndir/hungry llama.png" alt="Logo"
-                class="h-30 rounded-full absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 z-10">
+        <div class="relative h-20 bg-gradient-to-t from-gray-800 to-black border-b-1 border-accent">
 
+            <div class="absolute left-10 top-1/2 transform -translate-y-1/2 z-50 group">
+                <a href="index.html">
+                    <p
+                        class="text-accent text-xl font-display-accent transition-transform duration-300 group-hover:scale-105">
+                        The Hungry Llama</p>
+                </a>
+            </div>
+
+            <!-- Rounded logo -->
+            <div class="group">
+                <a href="index.html" alt="home">
+                    <img src="/myndir/hungry llama.png" alt="Logo"
+                        class="h-30 rounded-full absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 z-50 transition-transform duration-300 group-hover:scale-105  shadow-md shadow-accent/50">
+                </a>
+            </div>
             <!-- Burger Menu for small screens, dropdown menu is hidden. When clicked the toggleMenu() is called -->
             <div class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 sm:hidden">
                 <button class="text-accent" onclick="toggleMenu()">
@@ -54,19 +66,19 @@
 
             <!-- Links for large screens, hidden for everythig smaller than sm breakpoint -->
             <div class="hidden sm:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-20 space-x-6">
-                <a href="menu.html" class="text-accent hover:text-violet-600 transition duration-300">Menu</a>
-                <a href="about.html" class="text-accent hover:text-violet-600 transition duration-300">About Us</a>
-                <a href="contact.html" class="text-accent hover:text-violet-600 transition duration-300">Contact</a>
+                <a href="menu.html" class="text-accent hover:font-bold transition duration-300">Menu</a>
+                <a href="about.html" class="text-accent hover:font-bold transition duration-300">About Us</a>
+                <a href="contact.html" class="text-accent hover:font-bold transition duration-300">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- Dropdown menu, hidden for everything bigger than the sm breakpoint -->
     <div id="dropdownMenu"
-        class="absolute top-16 right-4 bg-gradient-to-t from-gray-800 to-black text-accent rounded-lg shadow-lg flex flex-col items-center space-y-2 py-4 px-6 sm:hidden z-30">
-        <a href="menu.html" class="text-lg hover:text-violet-600 transition duration-300">Menu</a>
-        <a href="about.html" class="text-lg hover:text-violet-600 transition duration-300">About Us</a>
-        <a href="contact.html" class="text-lg hover:text-violet-600 transition duration-300">Contact</a>
+        class="absolute top-16 right-4 bg-gradient-to-t from-gray-800 to-black text-accent rounded-lg shadow-lg flex flex-col items-center space-y-2 py-4 px-6 hidden z-30">
+        <a href="menu.html" class="text-lg hover:font-boldtransition duration-300">Menu</a>
+        <a href="about.html" class="text-lg hover:font-bold transition duration-300">About Us</a>
+        <a href="contact.html" class="text-lg hover:font-bold transition duration-300">Contact</a>
     </div>
 
 
@@ -77,12 +89,11 @@
             class="relative group bg-[url('/myndir/interior.jpg')] bg-center bg-cover bg-no-repeat flex-1 py-32 transform transition-transform duration-300 group-hover:scale-105">
             <!-- Black overlay -->
             <div class="absolute inset-0 bg-black opacity-20"></div>
-            <p
-                class="font-display-accent text-accent text-4xl text-center transform group-hover:scale-105 transition-transform duration-300">
+
+            <p class="accent font-display-accent text-accent text-4xl sm:text-6xl text-center ">
                 Where good food meets great
                 company</p><br>
-            <p
-                class="font-display-accent text-accent text-xs text-center transform group-hover:scale-105 transition-transform duration-300">
+            <p class="font-display-accent text-accent text-xs sm:text-lg text-center ">
                 - the hungry Llama
             </p>
         </div>
@@ -91,8 +102,10 @@
         <div class="relative w-full">
             <!-- mini menu, shows a selection on the menu, scrollable -->
             <div class="bg-black">
-                <p class="bg-gradient-to-t from-gray-800 to-black text-accent p-4">Our dishes</p>
-                <div class="relative py-15">
+                <p class="bg-gradient-to-t from-gray-800 to-black text-accent p-4 border-b-1 border-accent/50">Our
+                    dishes
+                </p>
+                <div class="relative py-5">
                     <!-- Background and Black Overlay -->
                     <div
                         class="absolute inset-0 bg-[url('/myndir/pastuso.jpg')] bg-[length:150%] blur-2xs bg-center bg-black opacity-20 z-0">
@@ -102,86 +115,211 @@
                     <div class="bg-black flex relative z-10 overflow-x-auto px-4 py-4 space-x-4">
 
                         <div class="flex">
-                            <!-- Image with overlay -->
+                            <!-- Chicken salad -->
                             <div class="relative group flex-shrink-0">
+                                <!-- Image -->
                                 <img src="/myndir/chicken_salad.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Chicken Salad</p>
                                 </div>
                             </div>
-                            <!-- Second image with overlay -->
+                            <!-- Grilled sandwich -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/grilled_sandwich.png" alt="wraps"
+                                <!-- Image -->
+                                <img src="/myndir/grilled_sandwich.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Grilled sandwich</p>
                                 </div>
                             </div>
-                            <!-- Image with overlay -->
+                            <!-- Orange salad -->
                             <div class="relative group flex-shrink-0">
+                                <!-- Image -->
+                                <img src="/myndir/orange_salad.png" alt="melts"
+                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
+                                <div
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Orange salad</p>
+                                </div>
+                            </div>
+                            <!-- Melts -->
+                            <div class="relative group flex-shrink-0">
+                                <!-- Image -->
+                                <img src="/myndir/melts.png" alt="melts"
+                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
+                                <div
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Melts</p>
+                                </div>
+                            </div>
+                            <!-- Sandwiches -->
+                            <div class="relative group flex-shrink-0">
+                                <!-- Image -->
+                                <img src="/myndir/sandwiches.png" alt="melts"
+                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
+                                <div
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Sandwiches</p>
+                                </div>
+                            </div>
+                            <!-- Wraps -->
+                            <div class="relative group flex-shrink-0">
+                                <!-- Image -->
+                                <img src="/myndir/wraps.png" alt="melts"
+                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
+                                <div
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Wraps</p>
+                                </div>
+                            </div>
+                            <!-- Chicken salad -->
+                            <div class="relative group flex-shrink-0">
+                                <!-- Image -->
                                 <img src="/myndir/chicken_salad.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Chicken Salad</p>
                                 </div>
                             </div>
-                            <!-- Second image with overlay -->
+                            <!-- Grilled sandwich -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/grilled_sandwich.png" alt="wraps"
+                                <!-- Image -->
+                                <img src="/myndir/grilled_sandwich.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Grilled sandwich</p>
                                 </div>
                             </div>
-                            <!-- Image with overlay -->
+                            <!-- Orange salad -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/chicken_salad.png" alt="melts"
+                                <!-- Image -->
+                                <img src="/myndir/orange_salad.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Orange salad</p>
                                 </div>
                             </div>
-                            <!-- Second image with overlay -->
+                            <!-- Melts -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/grilled_sandwich.png" alt="wraps"
+                                <!-- Image -->
+                                <img src="/myndir/melts.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Melts</p>
                                 </div>
                             </div>
-                            <!-- Image with overlay -->
+                            <!-- Sandwiches -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/chicken_salad.png" alt="melts"
+                                <!-- Image -->
+                                <img src="/myndir/sandwiches.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Sandwiches</p>
                                 </div>
                             </div>
-                            <!-- Second image with overlay -->
+                            <!-- Wraps -->
                             <div class="relative group flex-shrink-0">
-                                <img src="/myndir/grilled_sandwich.png" alt="wraps"
+                                <!-- Image -->
+                                <img src="/myndir/wraps.png" alt="melts"
                                     class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
+
+                                <!-- Overlay that disappears on hover -->
                                 <div
-                                    class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
+                                    class="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 h-35 w-auto rounded-full">
+                                </div>
+
+                                <!-- Text that appears beneath the image -->
+                                <div
+                                    class="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-accent">
+                                    <p class="text-lg font-display-default">Wraps</p>
                                 </div>
                             </div>
-                            <!-- Image with overlay -->
-                            <div class="relative group flex-shrink-0">
-                                <img src="/myndir/chicken_salad.png" alt="melts"
-                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
-                                <div
-                                    class="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
-                                </div>
-                            </div>
-                            <!-- Second image with overlay -->
-                            <div class="relative group flex-shrink-0">
-                                <img src="/myndir/grilled_sandwich.png" alt="wraps"
-                                    class="h-35 w-auto rounded-full px-3 transform group-hover:scale-105 transition-transform duration-300">
-                                <div
-                                    class="absolute inset-0 bg-black opacity-40 group-hover:opacity-0 transition-opacity duration-300 rounded-full">
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
@@ -193,10 +331,11 @@
 
     </main>
     <footer>
-        <div class="bg-gradient-to-t from-black to-gray-800">
+        <div class="bg-gradient-to-t from-black to-gray-800 border-1  border-t-accent/50 ">
             <p class=" text-white px-4 py-2"></p>
-            <p class="text-white px-4 py-2 text-xs text-center ">The hungry Llama - 1404 Food road - 555-3212
-                -frontdesk@hungryllama.com
+            <p class="text-accent/50 px-4 py-2 text-xs text-center ">
+                The hungry Llama - 1404 Food road - 555-3212 -frontdesk@hungryllama.com <br>
+                Opening hours: Tuesday - Sunday 12:00 - 23:00
             </p>
         </div>
     </footer>
